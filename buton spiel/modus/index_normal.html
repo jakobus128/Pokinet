@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>Button Beispiel</title>
+    <style>
+      body {
+        background-color: black;
+        position: relative;
+        height: 100vh;
+      }
+      button {
+        font-size: 18px;
+        padding: 5px 10px;
+        background-color: #f2f2f2;
+        color: black;
+        border: none;
+        border-radius: 5px;
+        box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.3);
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+      }
+      #counter {
+        font-size: 48px;
+        color: white;
+        position: absolute;
+        top: 40%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+      }
+      #backButton {
+        font-size: 14px;
+        padding: 5px 10px;
+        position: absolute;
+        bottom: 10px;
+        left: 50%;
+        transform: translate(-50%, 0);
+        background-color: #f2f2f2;
+        color: black;
+        border: none;
+        border-radius: 5px;
+        box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.3);
+        cursor: pointer;
+      }
+    </style>
+  </head>
+  <body>
+    <button id="backButton" onclick="window.history.back()">Zurück</button>
+    <div id="counter">0</div>
+    <button id="myButton">Klick mich!</button>
+    <script>
+      var button = document.getElementById("myButton");
+      var counter = document.getElementById("counter");
+      var count = 0;
+      button.addEventListener("click", function() {
+        count++;
+        counter.innerHTML = count;
+      });
+    </script>
+  </body>
+</html>
